@@ -14,3 +14,7 @@ It is part of my [plugin marketplace](https://github.com/NunoMotaRicardo/nmr-plu
 ## Contributing
 
 Open an issue to discuss ideas or bugs; see [`AGENTS.md`](AGENTS.md) for the conventions. More documentation is on the [wiki](https://github.com/NunoMotaRicardo/e-toro-plugin-ai/wiki).
+
+## License
+
+[MIT](LICENSE)

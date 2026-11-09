@@ -1,0 +1,10 @@
+{
+  "name": "etoro",
+  "version": "0.1.0",
+  "description": "eToro Public API for AI agents: market data, portfolio, watchlists and demo-first trading, with guided key setup.",
+  "mcpServers": {
+    "etoro-public-api": {
+      "httpUrl": "https://mcp.public-api.etoro.com"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "etoro",
+  "version": "0.1.0",
+  "description": "eToro Public API for AI agents: market data, portfolio, watchlists and demo-first trading, with guided key setup.",
+  "author": { "name": "NunoMotaRicardo" },
+  "homepage": "https://github.com/NunoMotaRicardo/e-toro-plugin-ai",
+  "repository": "https://github.com/NunoMotaRicardo/e-toro-plugin-ai",
+  "license": "MIT",
+  "keywords": ["etoro", "trading", "mcp", "api"]
+}

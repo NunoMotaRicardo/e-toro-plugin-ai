@@ -15,7 +15,7 @@ AGENTS.md / CLAUDE.md   agent instructions (symlink)
 wiki/                   documentation, mirrored to the GitHub wiki
 .github/workflows/      CI (wiki-sync.yml)
 ```
-Planned: `skills/`, plugin manifests per tool, and an MCP config if needed.
+`skills/etoro/` is the operating skill (short `SKILL.md`, detail in `references/`); `skills/setup/` is first-time setup; `.mcp.json` registers the MCP server. Manifests: `plugin.json`, `.claude-plugin/`, `.cursor-plugin/`, `gemini-extension.json` (keep name and version in sync).
 
 ## Conventions
 - Skill folder name == frontmatter `name`; descriptions state when to trigger.

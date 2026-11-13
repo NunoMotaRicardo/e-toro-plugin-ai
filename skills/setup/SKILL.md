@@ -17,7 +17,7 @@ The agent never sees key values: the user types them into their own terminal or 
 Ask which they want, recommending **MCP** (nothing to install, browser sign-in):
 
 - **MCP**: tools in the agent. Server `https://mcp.public-api.etoro.com`, name `etoro-public-api`. This plugin ships it in `.mcp.json`; other tools add it by URL.
-- **CLI**: `npm install -g etoro-cli`, then the user runs `etoro setup`.
+- **CLI**: `go install github.com/NunoMotaRicardo/etoro-cli/cmd/etoro-cli@latest` (or a release binary), then the user runs `etoro-cli connect`, which guides key creation, stores the keys and verifies them.
 - **REST**: scripts and apps, using the keys below.
 
 Done when the user has chosen. The key steps apply to CLI and REST, and are worth doing for MCP too.
@@ -53,12 +53,12 @@ Done when `[ -n "$ETORO_API_KEY" ] && [ -n "$ETORO_USER_KEY" ]` succeeds in the 
 ## 4. Connect
 
 - **MCP**: when tools prompt, the user signs in at `api-portal.etoro.com`; reload MCP servers if no tools appear.
-- **CLI**: the user runs `etoro setup` and enters the keys there.
+- **CLI**: the user runs `etoro-cli connect` in their own terminal and enters the keys there (hidden input).
 - **REST**: nothing more.
 
 ## 5. Verify
 
-Run one **read** against demo: the MCP `get-my-portfolio-summary` tool, `etoro portfolio summary`, or `GET /trading/info/demo/portfolio` (see `skills/etoro/references/rest-api.md`).
+Run one **read** against demo: the MCP `get-my-portfolio-summary` tool, `etoro-cli portfolio`, or `GET /trading/info/demo/portfolio` (see `skills/etoro/references/rest-api.md`).
 
 Then confirm the key is demo: `GET /trading/info/real/pnl` must return `403 InsufficientPermissions` (a `200` means a real key, so stop and tell the user).
 

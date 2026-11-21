@@ -9,13 +9,17 @@ Reads use the `get-my-*` tools, `get-instruments-overview` and `get-trader-profi
 ## CLI
 
 ```bash
-npm install -g etoro-cli
-etoro setup
-etoro quote AAPL TSLA
-etoro portfolio summary --output json
+go install github.com/NunoMotaRicardo/etoro-cli/cmd/etoro-cli@latest
+etoro-cli connect
+etoro-cli quote AAPL TSLA
+etoro-cli portfolio --json
 ```
 
-Every command accepts `--output json`. The agent confirms each `etoro trade ...` before running it.
+Every command accepts `--json`. The agent confirms each `etoro-cli trade ...` before running it.
+
+### More than one account
+
+Each eToro account is a CLI **profile** with its own demo and real keys: `etoro-cli --profile work connect`, then `--profile work` (or `ETORO_PROFILE=work`) on every command. Once two profiles exist the CLI refuses to run without one, so a trade cannot silently go to the wrong account; see the [etoro-cli Profiles page](https://github.com/NunoMotaRicardo/etoro-cli/wiki/Profiles). For MCP, register the server a second time under another name and sign in as the other account (not verified end to end; check which account each server returns before trading).
 
 ## REST
 

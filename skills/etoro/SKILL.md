@@ -15,6 +15,7 @@ Reads are free; trades move money. **Demo-first**: every action runs against the
 
 - **Confirm every real execution**: state environment, instrument, side, amount or units, and leverage, then wait for a yes. A yes covers one execution.
 - **At-most-once**: never resend a trade after a timeout or an unclear result; reconcile against the portfolio first (`references/rest-api.md`).
+- **Several accounts**: the user may have more than one eToro account. With the CLI each is a profile (`etoro-cli profiles`; `--profile <name>`); once more than one exists the CLI refuses to run without one, so ask the user which account instead of choosing. Name it in every confirmation ("work, real: buy AAPL ..."). With MCP, each account is its own registered server (`references/mcp.md`): use only the one the user named.
 - Never invent order parameters: send a stop-loss, take-profit or leverage above 1 only when the user gave it.
 - Match key and endpoint environment: a demo key calls `/demo/` endpoints, a real key calls the others.
 - Keep keys in environment variables; refer to them by name, never by value.

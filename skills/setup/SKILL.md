@@ -56,6 +56,10 @@ Done when `[ -n "$ETORO_API_KEY" ] && [ -n "$ETORO_USER_KEY" ]` succeeds in the 
 - **CLI**: the user runs `etoro-cli connect` in their own terminal and enters the keys there (hidden input).
 - **REST**: nothing more.
 
+### A second account?
+
+If the user manages more than one eToro account, repeat steps 2 to 5 per account: CLI `etoro-cli --profile <name> connect` (their terminal, hidden input), MCP a second server entry under another name (`skills/etoro/references/mcp.md`). Keys belong to the account that created them, so create each pair while logged in as that account. Once there are two profiles the CLI requires `--profile` on every command.
+
 ## 5. Verify
 
 Run one **read** against demo: the MCP `get-my-portfolio-summary` tool, `etoro-cli portfolio`, or `GET /trading/info/demo/portfolio` (see `skills/etoro/references/rest-api.md`).
